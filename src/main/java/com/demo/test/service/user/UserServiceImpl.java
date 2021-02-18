@@ -7,7 +7,6 @@ import com.demo.test.model.User;
 import com.demo.test.repository.UserRepository;
 import com.demo.test.service.mapper.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -93,7 +92,8 @@ public class UserServiceImpl implements UserService {
    * @return
    */
   private String encryptPassword(String password) {
-    return new BCryptPasswordEncoder().encode(password);
+    return password;
+    //new BCryptPasswordEncoder().encode(password);
   }
 
   /**
